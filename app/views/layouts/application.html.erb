@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mstagram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,7 +9,18 @@
 </head>
 <body>
 
+  <header>
+    <ul>
+      <li><%= link_to "Mstgram", pcts_path %></li>
+    　<li><%= link_to "トップページ", root_path %></li>
+    </ul>
+  </header>
+
 <%= yield %>
+
+<footer>
+  <p>© 2017 Mstgram</p>
+</footer>
 
 </body>
 </html>

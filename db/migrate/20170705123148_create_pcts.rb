@@ -1,6 +1,6 @@
-class CreateMsta < ActiveRecord::Migration
+class CreatePcts < ActiveRecord::Migration
   def change
-    create_table :msta do |t|
+    create_table :pcts do |t|
       t.string :title
       t.text :content
       t.timestamps null: false

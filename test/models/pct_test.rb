@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MstumTest < ActiveSupport::TestCase
+class PctTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,46 @@
+<%= form_for(@pct) do |f| %>
+<% if @pct.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @pct.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @pct.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+
+<% end %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+  <br>
+  <%= f.label :content %>
+  <%= f.text_field :content, class: 'form-control' %>
+
+
+  <!-- 画像投稿用 追加箇所 開始 -->
+  <div class="field">
+    <% if @pct.image? %>
+      <div class="thumbnail">
+        <%= image_tag @pct.image.url %>
+      </div>
+    <% end %><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @pct.persisted? && @pct.image? %>
+      <label>
+        <%= f.check_box :remove_image %>
+        画像を削除
+      </label>
+    <% end %>
+  </div>
+  <!-- 画像投稿用 追加箇所 終了 -->
+
+  <br>
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= link_to "一覧画面にもどる", pcts_path %>
