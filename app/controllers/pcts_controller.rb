@@ -1,4 +1,5 @@
 class PctsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pct, only: [:edit, :update, :destroy]
 
   def index
@@ -15,7 +16,8 @@ class PctsController < ApplicationController
   end
 
   def create
-    @pct = Pct.new(pcts_params)
+    @pct = Pct.new(pcts_params)]
+    @pct.user_id = current_user.id
       if @pct.save
         # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
         redirect_to pcts_path, notice: "投稿しました！"
