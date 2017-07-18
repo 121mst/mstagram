@@ -16,7 +16,7 @@ class PctsController < ApplicationController
   end
 
   def create
-    @pct = Pct.new(pcts_params)]
+    @pct = Pct.new(pcts_params)
     @pct.user_id = current_user.id
       if @pct.save
         # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
