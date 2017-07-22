@@ -21,6 +21,7 @@ class PctsController < ApplicationController
       if @pct.save
         # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
         redirect_to pcts_path, notice: "投稿しました！"
+      NoticeMailer.sendmail_pct(@pct).deliver
       else
         # 入力フォームを再描画します。
         render 'new'
