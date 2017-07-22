@@ -60,6 +60,10 @@ group :development, :test do
 
   gem 'better_errors'
 
+  gem 'pry-rails'
+  
+  gem 'better_errors'
+
 end
 
 group :development do
