@@ -37,6 +37,12 @@ gem 'rails_admin'
 
 gem 'cancan'
 
+gem 'omniauth'
+
+gem 'omniauth-twitter'
+
+gem 'omniauth-facebook'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -61,11 +67,12 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'pry-rails'
-  
+
   gem 'better_errors'
 
 end
 
 group :development do
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
