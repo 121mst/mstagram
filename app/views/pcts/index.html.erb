@@ -6,9 +6,11 @@
 <h1>一覧</h1>
 <%= link_to "投稿する", new_pct_path, class: 'btn btn-default' %>
 
+
 <% @pcts.each do |pct| %>
-<h4><strong><%= pct.title %></strong></h4>
+<h4><strong><%= pct.title %>　　<%= profile_img(pct.user) %></strong></h4>
 <p><%= pct.content %></p>
+
 
 <!-- 投稿画像 追加箇所 開始 -->
 <p>
@@ -22,6 +24,8 @@
 
 <%= link_to "編集", edit_pct_path(pct.id), class: 'btn btn-default btn-sm btn-success' %>
 <%= link_to "削除", pct_path(pct.id), method: :delete, class: 'btn btn-default btn-sm btn btn-danger' %>
+<hr  size="10">
+
 <% end %>
 
 </div>
